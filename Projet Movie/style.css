@@ -1,0 +1,73 @@
+body {
+  margin: 2rem;
+  font-family: "Open Sans";
+  background-color: #faf7f2;
+}
+.container {
+  margin: 50px auto;
+  width: 460px;
+}
+.card {
+  position: relative;
+  width: 100%;
+  padding: 1rem 2rem;
+  margin: 2rem auto;
+  background-color: #fff;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+.card > h1 {
+  text-transform: uppercase;
+  font-size: 22px;
+  margin: 0 0 0.5rem;
+  line-height: 1;
+}
+.card__meta {
+  display: flex;
+  color: lightslategrey;
+  font-size: 12px;
+  margin-bottom: 1rem;
+}
+.card__release-date {
+  font-weight: 400;
+  color: lightslategrey;
+}
+.card__genres {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+.card__genres--list {
+  display: flex;
+  margin: 0;
+  font-size: 12px;
+}
+.card__genres--list > li {
+  color: #fff;
+  background-color: #b5b5b5;
+  border-radius: 2px;
+  margin-right: 0.5rem;
+  padding: 0 0.5rem;
+  list-style: none;
+  text-transform: uppercase;
+}
+.card__actors {
+  margin: 0 0 2rem 0;
+}
+.card__actors--title {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.card__actors--list {
+  font-size: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.favorite-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}

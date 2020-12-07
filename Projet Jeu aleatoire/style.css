@@ -1,15 +1,41 @@
-html {
-    font-family: sans-serif;
-}
-
 body {
-    width: 50%;
-    max-width: 800px;
-    min-width: 480px;
-    margin: 0 auto;
+  font-family: Helvetica, sans-serif;
 }
 
-.lastResult {
-    color: white;
-    padding: 3px;
+.container {
+  max-width: 480px;
+  margin: auto;
+}
+
+#restartButton {
+  display: none;
+}
+
+#guessList {
+  margin: 10px 0;
+}
+
+#guessList > span::after {
+  content: " - ";
+  margin: 0 4px;
+}
+#guessList > span:last-child::after {
+  content: "";
+}
+
+#target {
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.success {
+  background-color: forestgreen;
+}
+
+.error {
+  background-color: #ff3456;
+}
+
+*[disabled] {
+  cursor: not-allowed;
 }

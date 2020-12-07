@@ -3,36 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number guessing game</title>
     <link rel="stylesheet" href="style.css" />
-    <title>Jeu Devinette de Nombres</title>
     <script src="script.js" defer></script>
   </head>
   <body>
-    <h1>Jeu de devinette de nombres</h1>
-    <p>Dans ce petit jeu, le but est de trouver le bon nombre entre 1 et 1000 et on a le droit à 20 essais pour trouver la bonne réponse.</p>
-    <!-- <form>
-        <div class="form">
-            <label for="guessField">Entrez votre proposition : </label>
-            <input type="text" id="guessField" class="guessField">
-            <input type="submit" value="Valider" class="guessSubmit">
-        </div>
-
-        <div class="resultParas">
-          <p class="guesses"></p>
-          <p class="lastResult"></p>
-          <p class="lowOrHi"></p>
-        </div>
-    </form> -->
-    <div class="form">
-      <label for="guessField">Enter a guess: </label>
-      <input type="text" id="guessField" class="guessField">
-      <input type="submit" value="Submit guess" class="guessSubmit">
-    </div>
-
-    <div class="resultParas">
-      <p class="guesses"></p>
-      <p class="lastResult"></p>
-      <p class="lowOrHi"></p>
+    <div class="container">
+      <h1>Deviner un nombre</h1>
+      <p>
+        Nous avons généré un nombre aléatoire entre 1 et 1000, tentez de le
+        deviner en 20 tours maximum. Pour chaque tentative, nous vous dirons si
+        votre estimation est trop ou pas assez élevée.
+      </p>
+      <form>
+        <label for="guessField">Entrez votre proposition :</label>
+        <input
+          id="guessField"
+          type="number"
+          name="guessField"
+          placeholder="12"
+        />
+        <button id="validateButton" type="submit">Valider</button>
+      </form>
+      <p id="timer"></p>
+      <p id="guessCountLabel">0/20</p>
+      <div id="guessList"></div>
+      <p id="target"></p>
+      <button id="restartButton">Rejouer</button>
     </div>
   </body>
 </html>

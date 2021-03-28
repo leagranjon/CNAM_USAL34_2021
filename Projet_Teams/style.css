@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: 'RocknRoll One', sans-serif;
+}
+
+/* -------------------------------------------HEADER------------------------------------------- */
+header {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 1px;
+    padding-bottom: 3px;
+}
+h1 {
+    text-transform: uppercase;
+}
+.resume {
+    font-style: italic;
+}
+
+/* -------------------------------------------MAIN------------------------------------------- */
+.participants {
+    background-color: #9fa3b7;
+    padding-top: 5px;
+}
+.teams {
+    background-color: #000000;
+    color: #ffffff;
+    padding-top: 5px;
+}
+/* -------------------------------------------PARTICIPANTS & TEAMS------------------------------------------- */
+h2 {
+    text-align: center;
+    border: 2px solid #000000;
+}
+.name {
+    display: flex;
+    flex-direction: column;
+}
+.generate {
+    display: flex;
+    flex-direction: column;
+}

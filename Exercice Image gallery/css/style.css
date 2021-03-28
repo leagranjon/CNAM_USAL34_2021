@@ -1,0 +1,58 @@
+:root {
+  --widthMargin: 5px;
+}
+
+body {
+  background: #212121;
+}
+
+h1 {
+  color: #fff;
+  font-family: helvetica, arial, sans-serif;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: auto;
+  border: white solid var(--widthMargin);
+  background: white;
+}
+
+.main-view {
+  display: flex;
+  position: relative;
+  margin-bottom: var(--widthMargin);
+}
+
+.Thumbs {
+  display: flex;
+  margin: 0 calc(var(--widthMargin) / -2);
+}
+
+.Thumb {
+  display: flex;
+  margin: 0 calc(var(--widthMargin) / 2);
+  cursor: pointer;
+}
+
+.Thumb-isSelected,
+.Thumb:hover {
+  opacity: 0.5;
+}
+
+#ButtonMode {
+  border: 0;
+  background: rgba(150, 150, 150, 0.6);
+  text-shadow: 1px 1px 1px white;
+  border: 1px solid #999;
+  position: absolute;
+  cursor: pointer;
+  top: 2px;
+  left: 2px;
+}

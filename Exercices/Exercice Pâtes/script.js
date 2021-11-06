@@ -1,78 +1,92 @@
-// 1. Partie HTML (3 boutons avec 3 identifiants)
-//  2. Sélectionnez les boutons
-//  3. Au clic de l'utilisateur sur le bouton "Mettre de l'eau dans la casserole"
-    // a. Vérifier qu'on est bien à la première étape
-    // b. Si oui, on affiche dans la console "Je mets de l'eau dans la casserole" et je valide l 'étape 1
-    // c. Sinon, on affiche "Euh l'eau est déjà dans la casserole..."
-//  4. Au clic de l'utilisateur sur le bouton "Chauffer l'eau de la casserole"
-    // a. Vérifier qu'on est bien à la seconde étape
-    // b. Si oui, on affiche "Je chauffe l'eau" et je valide l 'étape 2
-    // c. Sinon, si on est encore au début, on affiche "Bah il y a pas d'eau dans la casserole !"
-    // d. Sinon, si on l'étape 2 est déjà validé, on affiche "C'est déjà chaud"
-//  5. Au clic de l'utilisateur sur le bouton "Mettre les pâtes"
-    // a. Vérifier qu'on est bien à la troixième étape
-    // b. Si oui, on affiche "Je rajoute les pâtes", "C'est cuit, bon appétit !" et je valide l 'étape 3
-    // c. Sinon, si on n'est pas l'étape 2, on affiche "Pas encore prêt pour rajouter les pâtes"
+// Ingrédients :
+// - Eau
+// - Pâtes
 
-//  À faire plus tard, afficher les textes dans la page
+// Ustensiles :
+// - Casserole
+// - Passoire
+// - Plaque de cuisson
 
-// etape = 1 => Etape initiale, rien n'a été fait
-// etape = 2 => L'eau est dans la casserole
-// etape = 3 => L'eau a été chauffée
-// etape = 4 => Les pâtes sont cuites
-let etape = 1
-let etape = 2
-let etape = 3
+// Actions :
+// => Remplir la casserole d'eau
 
-let putWaterButton = document.querySelector("#putWater");
-let boilWaterButton = document.querySelector("#boilWater");
-let putPastaButton = document.querySelector("#putPasta");
+// => Faire bouillir
+//   Si la casserole a de l'eau
 
-putWaterButton.addEventListener("click", putWater);
-boilWaterButton.addEventListener("click", boilWater);
-putPastaButton.addEventListener("click", putPasta);
+// => Mettre des pâtes
+//   Si la casserole a de l'eau
+//   Si l'eau boue
 
-function putWater() {
-    if (etape === 1) {
+// => Égoutter les pâtes
+//   Si la casserole a de l'eau
+//   Si l'eau boue
+//   Si les pâtes sont cuites
+
+                //----------------------------------------------//
+
+let putWater = document.querySelector("#putWater");
+let boilWater = document.querySelector("#boilWater");
+let putPasta = document.querySelector("#putPasta");
+let drainPasta = document.querySelector("#drainPasta");
+
+let filled = false;
+let boiled = false;
+let added = false;
+let drained = false;
+
+putWater.addEventListener("click", function() {
+    if(filled === true) {
+        console.log("L'eau est deja dans la casserole");
+    } else {
         console.log("Je met de l'eau dans la casserole");
-        etape = 2; 
+        filled = true;
     }
-    else if(etape === 2) {
-        console.log("Euh l'eau est deja dans la casserole...");
+})
+
+boilWater.addEventListener("click", function() {
+    if(boiled === true) {
+        console.log("L'eau est déjà en train de bouillir dans la casserole");
+    } 
+    else if (filled === false) {
+        console.log("Il n'y a pas d'eau dans la casserole");
+    } 
+    else {
+        console.log("L'eau bouillit dans la casserole");
+        boiled = true;
+    }
+})
+
+putPasta.addEventListener("click", function() {
+    if(added === true) {
+        console.log("Les pâtes sont déjà dans la casserole")
+    }
+    else if(filled === false) {
+        console.log("Il n'y a pas d'eau dans la casserole");
+    }
+    else if(boiled === false) {
+        console.log("L'eau ne bouillit pas dans la casserole");
     }
     else {
-        console.log("Euh l'eau est deja dans la casserole...");
+        console.log("On ajoute les pâtes dans la casserole");
+        added = true;
     }
-}
+})
 
-function boilWater() {
-    if (etape === 2) {
-        console.log("Je chauffe l'eau");
-        etape = 3;
+drainPasta.addEventListener("click", function() {
+    if(drained === true) {
+        console.log("Les pâtes sont déjà égoutter");
     }
-    else if (etape === 3) {
-        console.log("J'ai déja chauffée l'eau");
+    else if(filled === false) {
+        console.log("Il n'y a pas d'eau dans la casserole");
+    }
+    else if(boiled === false) {
+        console.log("L'eau ne bouillit pas dans la casserole");
+    }
+    else if(added === false) {
+        console.log("Les pâtes ne sont pas dans la casserole");
     }
     else {
-        console.log("Il faut d'abord mettre de l'eau dans la casserole");
+        console.log("Les pâtes sont cuites, on peut les égoutter");
+        drained = true;
     }
-}
-
-function putPasta() {
-    if (etape ===3) {
-        console.log("Je met les pâtes", "Bon app mon Khey");
-        etape = 1;
-    }
-    else if (etape ===1) {
-        console.log("Il faut d'abord mettre de l'eau");
-    }
-    else {
-        console.log("Pas encore pret pour mettre les pates");
-    }
-}
-etape === 1 // true or false
-if (false) {
-    //
-}
-
-let nothing // undefined
+})
